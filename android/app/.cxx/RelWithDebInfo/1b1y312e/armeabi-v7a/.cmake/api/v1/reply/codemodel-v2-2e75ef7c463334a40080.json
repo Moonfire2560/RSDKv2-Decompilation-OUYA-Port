@@ -1,0 +1,192 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-RelWithDebInfo-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "RSDKv2",
+					"childIndexes" : 
+					[
+						2
+					],
+					"jsonFile" : "directory-RSDKv2-RelWithDebInfo-963eb67366edd4116e4d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "C:/Github/RSDKv2-Decompilation",
+					"targetIndexes" : 
+					[
+						0,
+						5,
+						6
+					]
+				},
+				{
+					"build" : "RSDKv2/SDL2",
+					"jsonFile" : "directory-RSDKv2.SDL2-RelWithDebInfo-fc1fe8a94ed36e2646b9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "C:/Github/RSDKv2-Decompilation/dependencies/android/SDL",
+					"targetIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						7,
+						8
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "RSDKv2"
+				},
+				{
+					"childIndexes" : 
+					[
+						2
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "RetroEngine",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						5,
+						6
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "SDL2",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						7,
+						8
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "RetroEngine::@24e3fa2930c0b74b4ff5",
+					"jsonFile" : "target-RetroEngine-RelWithDebInfo-a9566b7add784a0db11e.json",
+					"name" : "RetroEngine",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "SDL2::@b561bd7a7b184ee14afe",
+					"jsonFile" : "target-SDL2-RelWithDebInfo-149c2f1a04cd8f5eddb0.json",
+					"name" : "SDL2",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "SDL2-static::@b561bd7a7b184ee14afe",
+					"jsonFile" : "target-SDL2-static-RelWithDebInfo-906d5bdb1887f438ca42.json",
+					"name" : "SDL2-static",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "SDL2_test::@b561bd7a7b184ee14afe",
+					"jsonFile" : "target-SDL2_test-RelWithDebInfo-290f0011c5bcafbdc16f.json",
+					"name" : "SDL2_test",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "SDL2main::@b561bd7a7b184ee14afe",
+					"jsonFile" : "target-SDL2main-RelWithDebInfo-ea6e353a9b1237ac88c9.json",
+					"name" : "SDL2main",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "libogg::@24e3fa2930c0b74b4ff5",
+					"jsonFile" : "target-libogg-RelWithDebInfo-4e79ba0e9e81d2b9e15a.json",
+					"name" : "libogg",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "libvorbis::@24e3fa2930c0b74b4ff5",
+					"jsonFile" : "target-libvorbis-RelWithDebInfo-f2bbc980af01350d7070.json",
+					"name" : "libvorbis",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "sdl_headers_copy::@b561bd7a7b184ee14afe",
+					"jsonFile" : "target-sdl_headers_copy-RelWithDebInfo-9a3cdfe026c4a1a0d90b.json",
+					"name" : "sdl_headers_copy",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "uninstall::@b561bd7a7b184ee14afe",
+					"jsonFile" : "target-uninstall-RelWithDebInfo-bfe3c3c638bb6e405106.json",
+					"name" : "uninstall",
+					"projectIndex" : 2
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Github/RSDKv2-Decompilation/android/app/.cxx/RelWithDebInfo/1b1y312e/armeabi-v7a",
+		"source" : "C:/Github/RSDKv2-Decompilation/android/app/jni"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

@@ -4,8 +4,6 @@
 // Disables POSIX use c++ name blah blah stuff
 #pragma warning(disable : 4996)
 
-// Setting this to true removes (almost) ALL changes from the original code, the trade off is that a playable game cannot be built, it is advised to
-// be set to true only for preservation purposes
 #ifndef RETRO_USE_ORIGINAL_CODE
 #define RETRO_USE_ORIGINAL_CODE (0)
 #endif
@@ -34,7 +32,6 @@ typedef signed char sbyte;
 typedef unsigned short ushort;
 typedef unsigned int uint;
 
-// Platforms (RSDKv3 only defines these 7, but feel free to add your own custom platform define for easier platform code changes)
 #define RETRO_WIN      (0)
 #define RETRO_OSX      (1)
 #define RETRO_XBOX_360 (2)
@@ -42,14 +39,11 @@ typedef unsigned int uint;
 #define RETRO_iOS      (4)
 #define RETRO_ANDROID  (5)
 #define RETRO_WP7      (6)
-// Custom Platforms start here
 #define RETRO_UWP (7)
 
-// Platform types (Game manages platform-specific code such as HUD position using this rather than the above)
 #define RETRO_STANDARD (0)
 #define RETRO_MOBILE   (1)
 
-// use this macro (RETRO_PLATFORM) to define platform specific code blocks and etc to run the engine
 #if defined _WIN32
 #if defined WINAPI_FAMILY
 #if WINAPI_FAMILY != WINAPI_FAMILY_APP
@@ -74,12 +68,20 @@ typedef unsigned int uint;
 #else
 #error "Unknown Apple platform"
 #endif
+#elif defined __ANDROID__
+#define RETRO_PLATFORM (RETRO_ANDROID)
 #else
 #define RETRO_PLATFORM (RETRO_WIN) // Default
 #endif
 
 #if RETRO_PLATFORM == RETRO_UWP
 #define BASE_PATH            ""
+#define DEFAULT_SCREEN_XSIZE 320
+#define DEFAULT_FULLSCREEN   false
+#elif RETRO_PLATFORM == RETRO_ANDROID
+#define BASE_PATH "/sdcard/RSDK/v2/"
+#define RETRO_USING_MOUSE
+#define RETRO_USING_TOUCH
 #define DEFAULT_SCREEN_XSIZE 320
 #define DEFAULT_FULLSCREEN   false
 #else
@@ -90,10 +92,10 @@ typedef unsigned int uint;
 #define DEFAULT_FULLSCREEN   false
 #endif
 
-#if RETRO_PLATFORM == RETRO_WIN || RETRO_PLATFORM == RETRO_OSX || RETRO_PLATFORM == RETRO_iOS || RETRO_PLATFORM == RETRO_UWP
+#if RETRO_PLATFORM == RETRO_WIN || RETRO_PLATFORM == RETRO_OSX || RETRO_PLATFORM == RETRO_iOS || RETRO_PLATFORM == RETRO_UWP || RETRO_PLATFORM == RETRO_ANDROID
 #define RETRO_USING_SDL1 (0)
 #define RETRO_USING_SDL2 (1)
-#else // Since its an else & not an elif these platforms probably aren't supported yet
+#else
 #define RETRO_USING_SDL1 (0)
 #define RETRO_USING_SDL2 (0)
 #endif
@@ -105,7 +107,6 @@ enum RetroStates {
     ENGINE_EXITGAME    = 3,
 };
 
-// General Defines
 #define SCREEN_YSIZE   (240)
 #define SCREEN_CENTERY (SCREEN_YSIZE / 2)
 
@@ -119,19 +120,19 @@ enum RetroStates {
 #elif RETRO_PLATFORM == RETRO_OSX
 #include <SDL2/SDL.h>
 #include <Vorbis/vorbisfile.h>
-
 #include "cocoaHelpers.hpp"
 #elif RETRO_PLATFORM == RETRO_iOS
 #include <SDL2/SDL.h>
 #include <vorbis/vorbisfile.h>
-
 #include "cocoaHelpers.hpp"
+#elif RETRO_PLATFORM == RETRO_ANDROID
+#include <SDL.h>
+#include <vorbis/vorbisfile.h>
 #endif
 
 extern bool usingCWD;
 extern bool engineDebugMode;
 
-// Utils
 #include "Ini.hpp"
 #include "Math.hpp"
 #include "String.hpp"
@@ -167,12 +168,11 @@ public:
     bool GameRunning     = false;
 
     int GameMode    = ENGINE_MAINGAME;
-    byte ColourMode = 1; // 16-bit
+    byte ColourMode = 1;
 
     int frameSkipSetting = 0;
     int frameSkipTimer   = 0;
 
-    // Ported from RSDKv5
     int startList_Game  = -1;
     int startStage_Game = -1;
 
@@ -200,21 +200,21 @@ public:
 
     bool isFullScreen = false;
 
-    bool startFullScreen  = false; // if should start as fullscreen
+    bool startFullScreen  = false;
     bool borderless       = false;
     bool vsync            = false;
-    bool enhancedScaling  = true; // enable enhanced scaling
+    bool enhancedScaling  = true;
     int windowScale       = 2;
-    int refreshRate       = 60; // user-picked screen update rate
-    int screenRefreshRate = 60; // hardware screen update rate
-    int targetRefreshRate = 60; // game logic update rate
+    int refreshRate       = 60;
+    int screenRefreshRate = 60;
+    int targetRefreshRate = 60;
 
-    uint frameCount      = 0; // frames since scene load
+    uint frameCount      = 0;
     int renderFrameIndex = 0;
     int skipFrameIndex   = 0;
 
-    int windowXSize; // width of window/screen in the previous frame
-    int windowYSize; // height of window/screen in the previous frame
+    int windowXSize;
+    int windowYSize;
 
 #if RETRO_USING_SDL2
     SDL_Window *window          = nullptr;

@@ -16,7 +16,7 @@ namespace fs = std::filesystem;
 
 fs::path ResolvePath(fs::path given) {
     if (given.is_relative())
-        given = fs::current_path() / given; // thanks for the weird syntax!
+        given = fs::current_path() / given;
 
     for (auto &p : fs::directory_iterator{ given.parent_path() }) {
         char pbuf[0x100];
@@ -31,11 +31,12 @@ fs::path ResolvePath(fs::path given) {
             return p.path();
         }
     }
-    return given; // might work might not!
+    return given;
 }
 
 void InitMods() {
     modList.clear();
+    StrCopy(modsPath, BASE_PATH);
 
     char modBuf[0x100];
     sprintf(modBuf, "%smods", modsPath);
@@ -116,22 +117,18 @@ bool LoadMod(ModInfo *info, std::string modsPath, std::string folder, bool activ
         info->folder  = folder;
 
         char infoBuf[0x100];
-        // Name
         StrCopy(infoBuf, "");
         modSettings.GetString("", "Name", infoBuf);
         if (!StrComp(infoBuf, ""))
             info->name = infoBuf;
-        // Desc
         StrCopy(infoBuf, "");
         modSettings.GetString("", "Description", infoBuf);
         if (!StrComp(infoBuf, ""))
             info->desc = infoBuf;
-        // Author
         StrCopy(infoBuf, "");
         modSettings.GetString("", "Author", infoBuf);
         if (!StrComp(infoBuf, ""))
             info->author = infoBuf;
-        // Version
         StrCopy(infoBuf, "");
         modSettings.GetString("", "Version", infoBuf);
         if (!StrComp(infoBuf, ""))
@@ -157,7 +154,6 @@ void ScanModFolder(ModInfo *info) {
 
     const std::string modDir = modPath.string() + "/" + info->folder;
 
-    // Check for Data/ replacements
     fs::path dataPath = ResolvePath(modDir + "/Data");
 
     if (fs::exists(dataPath) && fs::is_directory(dataPath)) {
@@ -186,7 +182,6 @@ void ScanModFolder(ModInfo *info) {
                             buffer[i - tokenPos] = modBuf[i] == '\\' ? '/' : modBuf[i];
                         }
 
-                        // PrintLog(modBuf);
                         std::string path(buffer);
                         std::string modPath(modBuf);
                         char pathLower[0x100];
@@ -205,7 +200,6 @@ void ScanModFolder(ModInfo *info) {
         }
     }
 
-    // Check for Scripts/ replacements
     fs::path scriptPath = ResolvePath(modDir + "/Scripts");
 
     if (fs::exists(scriptPath) && fs::is_directory(scriptPath)) {
@@ -234,7 +228,6 @@ void ScanModFolder(ModInfo *info) {
                             buffer[i - tokenPos] = modBuf[i] == '\\' ? '/' : modBuf[i];
                         }
 
-                        // PrintLog(modBuf);
                         std::string path(buffer);
                         std::string modPath(modBuf);
                         char pathLower[0x100];
@@ -265,7 +258,6 @@ void SaveMods() {
 
         for (int m = 0; m < modList.size(); ++m) {
             ModInfo *info = &modList[m];
-
             modConfig.SetBool("mods", info->folder.c_str(), info->active);
         }
 
@@ -274,7 +266,6 @@ void SaveMods() {
 }
 
 void RefreshEngine() {
-    // Reload entire engine
     Engine.LoadGameConfig("Data/Game/GameConfig.bin");
 #if RETRO_USING_SDL2
     if (Engine.window) {

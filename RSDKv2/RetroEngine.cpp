@@ -224,6 +224,9 @@ void RetroEngine::Init() {
     strcat(dest, resourcePath);
     strcat(dest, "\\");
     strcat(dest, Engine.dataFile);
+#elif RETRO_PLATFORM == RETRO_ANDROID
+    StrCopy(dest, "/sdcard/RSDK/v2/");
+    StrAdd(dest, Engine.dataFile);
 #else
     StrCopy(dest, BASE_PATH);
     StrAdd(dest, Engine.dataFile);

@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "RSDKv2/SDL2",
+		"source" : "C:/Github/RSDKv2-Decompilation/dependencies/android/SDL"
+	}
+}

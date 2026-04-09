@@ -1,0 +1,15 @@
+C:/Github/RSDKv2-Decompilation/android/app/.cxx/RelWithDebInfo/1b1y312e/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Github/RSDKv2-Decompilation/android/app/.cxx/RelWithDebInfo/1b1y312e/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+C:/Github/RSDKv2-Decompilation/android/app/.cxx/RelWithDebInfo/1b1y312e/armeabi-v7a/RSDKv2/CMakeFiles/RetroEngine.dir
+C:/Github/RSDKv2-Decompilation/android/app/.cxx/RelWithDebInfo/1b1y312e/armeabi-v7a/RSDKv2/CMakeFiles/libogg.dir
+C:/Github/RSDKv2-Decompilation/android/app/.cxx/RelWithDebInfo/1b1y312e/armeabi-v7a/RSDKv2/CMakeFiles/libvorbis.dir
+C:/Github/RSDKv2-Decompilation/android/app/.cxx/RelWithDebInfo/1b1y312e/armeabi-v7a/RSDKv2/CMakeFiles/edit_cache.dir
+C:/Github/RSDKv2-Decompilation/android/app/.cxx/RelWithDebInfo/1b1y312e/armeabi-v7a/RSDKv2/CMakeFiles/rebuild_cache.dir
+C:/Github/RSDKv2-Decompilation/android/app/.cxx/RelWithDebInfo/1b1y312e/armeabi-v7a/RSDKv2/SDL2/CMakeFiles/sdl_headers_copy.dir
+C:/Github/RSDKv2-Decompilation/android/app/.cxx/RelWithDebInfo/1b1y312e/armeabi-v7a/RSDKv2/SDL2/CMakeFiles/SDL2main.dir
+C:/Github/RSDKv2-Decompilation/android/app/.cxx/RelWithDebInfo/1b1y312e/armeabi-v7a/RSDKv2/SDL2/CMakeFiles/SDL2.dir
+C:/Github/RSDKv2-Decompilation/android/app/.cxx/RelWithDebInfo/1b1y312e/armeabi-v7a/RSDKv2/SDL2/CMakeFiles/SDL2-static.dir
+C:/Github/RSDKv2-Decompilation/android/app/.cxx/RelWithDebInfo/1b1y312e/armeabi-v7a/RSDKv2/SDL2/CMakeFiles/SDL2_test.dir
+C:/Github/RSDKv2-Decompilation/android/app/.cxx/RelWithDebInfo/1b1y312e/armeabi-v7a/RSDKv2/SDL2/CMakeFiles/uninstall.dir
+C:/Github/RSDKv2-Decompilation/android/app/.cxx/RelWithDebInfo/1b1y312e/armeabi-v7a/RSDKv2/SDL2/CMakeFiles/edit_cache.dir
+C:/Github/RSDKv2-Decompilation/android/app/.cxx/RelWithDebInfo/1b1y312e/armeabi-v7a/RSDKv2/SDL2/CMakeFiles/rebuild_cache.dir

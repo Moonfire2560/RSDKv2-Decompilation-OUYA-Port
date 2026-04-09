@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.7)
+project(RSDKv2)
+set(curdir ${CMAKE_CURRENT_LIST_DIR})
+set(android 1)
+add_subdirectory("C:/Github/RSDKv2-Decompilation" RSDKv2)

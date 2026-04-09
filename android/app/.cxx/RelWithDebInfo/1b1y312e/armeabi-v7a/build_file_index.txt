@@ -1,0 +1,3 @@
+C:\Github\RSDKv2-Decompilation\android\app\jni\CMakeLists.txt
+C:\Github\RSDKv2-Decompilation\CMakeLists.txt
+C:\Github\RSDKv2-Decompilation\dependencies\android\SDL\CMakeLists.txt
