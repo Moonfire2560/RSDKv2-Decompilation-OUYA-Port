@@ -1,8 +1,10 @@
 # RSDKv2 Decompilation
 
-A complete decompilation of the Retro-Sonic Engine v2.
+A complete decompilation of the Retro-Sonic Engine v2 targeting the OUYA. Highly experimental.
 
 Without assets from the Sonic Nexus 2008 demo, this decompilation will not run. You can download the game [here](https://info.sonicretro.org/Sonic_Nexus).
+
+Place the Data.bin file in (Root of storage) -> RSDK -> v2
 
 # Additional Tweaks
 * Added a built in mod loader, allowing to easily create and play mods.
